@@ -25,13 +25,13 @@ export async function researcher(
   let fullResponse = ''
   let hasError = false
   const answerSection = (
-    <Section title="Answer">
+    <Section title="回答">
       <BotMessage content={streamText.value} />
     </Section>
   )
 
   let isFirstToolResponse = true
-  const currentDate = new Date().toLocaleString();
+  const currentDate = new Date().toLocaleString()
   const result = await nonexperimental_streamText({
     model: openai.chat(process.env.OPENAI_API_MODEL || 'gpt-4o'),
     maxTokens: 2500,

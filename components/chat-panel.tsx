@@ -156,7 +156,7 @@ export function ChatPanel({ messages }: ChatPanelProps) {
           </Button>
         </div>
         <EmptyScreen
-          submitMessage={message => {
+          submitMessage={(message: string) => {
             setInput(message)
           }}
           className={cn(showEmptyScreen ? 'visible' : 'invisible')}

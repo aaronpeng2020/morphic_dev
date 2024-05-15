@@ -99,7 +99,7 @@ export function ChatPanel({ messages }: ChatPanelProps) {
             <span className="text-lg text-gray-300 ml-2">人工智能搜索引擎</span>
           </div>
 
-          {/* 添加文本 Logo */}
+          {/* 添加文本 123 */}
           <Textarea
             ref={inputRef}
             name="input"

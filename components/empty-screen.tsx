@@ -3,33 +3,27 @@ import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
-interface WikiQAResult {
+interface WikiQAItem {
+  typeid: number
   title: string
-  answerA: string
-  answerB: string
-  answerC: string
-  answerD: string
-  answer: string
-  analytic: string
+  content: string
 }
 
 interface WikiQAResponse {
   code: number
   msg: string
-  result: WikiQAResult
+  result: {
+    list: WikiQAItem[]
+  }
 }
 
-// API调用函数
 const fetchRandomWikiQA = async (): Promise<WikiQAResponse | null> => {
   try {
-    const response = await axios.get(
-      'https://apis.tianapi.com/baiketiku/index',
-      {
-        params: {
-          key: 'd23ec9d352ae41edd8f7c796bb3983ed'
-        }
+    const response = await axios.get('https://apis.tianapi.com/tenwhy/index', {
+      params: {
+        key: 'd23ec9d352ae41edd8f7c796bb3983ed'
       }
-    )
+    })
     return response.data
   } catch (error) {
     console.error('Error fetching random wiki QA:', error)
@@ -39,10 +33,11 @@ const fetchRandomWikiQA = async (): Promise<WikiQAResponse | null> => {
 
 // 转换API数据格式
 const transformWikiQA = (data: WikiQAResponse) => {
-  if (data && data.code === 200) {
+  if (data && data.code === 200 && data.result.list.length > 0) {
+    const item = data.result.list[0]
     return {
-      heading: data.result.title,
-      message: data.result.title
+      heading: item.title,
+      message: item.title
     }
   }
   return null

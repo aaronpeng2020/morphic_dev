@@ -3,8 +3,24 @@ import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
+interface WikiQAResult {
+  title: string
+  answerA: string
+  answerB: string
+  answerC: string
+  answerD: string
+  answer: string
+  analytic: string
+}
+
+interface WikiQAResponse {
+  code: number
+  msg: string
+  result: WikiQAResult
+}
+
 // API调用函数
-const fetchRandomWikiQA = async () => {
+const fetchRandomWikiQA = async (): Promise<WikiQAResponse | null> => {
   try {
     const response = await axios.get(
       'https://apis.tianapi.com/baiketiku/index',
@@ -22,7 +38,7 @@ const fetchRandomWikiQA = async () => {
 }
 
 // 转换API数据格式
-const transformWikiQA = data => {
+const transformWikiQA = (data: WikiQAResponse) => {
   if (data && data.code === 200) {
     return {
       heading: data.result.title,
@@ -32,13 +48,21 @@ const transformWikiQA = data => {
   return null
 }
 
-export function EmptyScreen({ submitMessage, className }) {
-  const [exampleMessages, setExampleMessages] = useState([])
+export function EmptyScreen({
+  submitMessage,
+  className
+}: {
+  submitMessage: (message: string) => void
+  className?: string
+}) {
+  const [exampleMessages, setExampleMessages] = useState<
+    { heading: string; message: string }[]
+  >([])
 
   useEffect(() => {
     async function loadRandomWikiQA() {
       const wikiQAData = await fetchRandomWikiQA()
-      const transformedData = transformWikiQA(wikiQAData)
+      const transformedData = transformWikiQA(wikiQAData!)
       if (transformedData) {
         setExampleMessages([transformedData])
       }

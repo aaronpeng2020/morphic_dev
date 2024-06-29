@@ -122,7 +122,7 @@ export function ChatPanel({ messages, query }: ChatPanelProps) {
         <div className="relative flex flex-col items-center w-full">
           <div className="mb-8 text-3xl font-bold text-gray-400">
             taikula.ai
-            <span className="text-lg text-gray-300 ml-2">人工智能搜索引擎</span>
+            <span className="text-lg text-gray-300 ml-2">有问题？太酷辣！</span>
           </div>
 
           {/* 添加文本 123 */}

@@ -27,12 +27,8 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tailwindcss/typography": "^0.5.12",
     "@upstash/redis": "^1.30.0",
-<<<<<<< HEAD
     "axios": "^1.6.8",
-    "ai": "^3.2.1",
-=======
     "ai": "^3.2.22",
->>>>>>> ba0319678b6ef4f17d8632993228a7b4cbdd6527
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.0",

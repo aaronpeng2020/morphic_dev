@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
+<<<<<<< HEAD
 interface WikiQAItem {
   typeid: number
   title: string
@@ -39,6 +40,24 @@ const transformWikiQA = (data: WikiQAResponse) => {
       heading: item.title,
       message: item.title
     }
+=======
+const exampleMessages = [
+  {
+    heading: 'What is GPT-4o mini?',
+    message: 'What is GPT-4o mini?'
+  },
+  {
+    heading: 'Why is Nvidia growing rapidly?',
+    message: 'Why is Nvidia growing rapidly?'
+  },
+  {
+    heading: 'How does the Vercel AI SDK work?',
+    message: 'How does the Vercel AI SDK work?'
+  },
+  {
+    heading: 'Tesla vs Rivian',
+    message: 'Tesla vs Rivian'
+>>>>>>> 219786d51409b29f4338dd034bb21751dd6c12e2
   }
   return null
 }

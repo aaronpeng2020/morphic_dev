@@ -140,10 +140,11 @@ This will allow you to use Morphic as your default search engine in the browser.
 
 - OpenAI
   - gpt-4o
+  - gpt-4o-mini
   - gpt-4-turbo
   - gpt-3.5-turbo
 - Google
-  - Gemini 1.5 pro
+  - Gemini 1.5 pro (Unstable)
 - Anthropic
   - Claude 3.5 Sonnet
 - Ollama (Unstable)
@@ -152,5 +153,7 @@ This will allow you to use Morphic as your default search engine in the browser.
 ### List of verified models that can be specified to writers:
 
 - [Groq](https://console.groq.com/docs/models)
+  - LLaMA3.1 8b
+  - LLaMA3.1 70B
   - LLaMA3 8b
   - LLaMA3 70b

@@ -58,17 +58,11 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-=======
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.13",
->>>>>>> 8d357ac373985450cd26f3a336bda39c20f54b60
     "eslint": "^8",
     "eslint-config-next": "^14.2.3",
     "postcss": "^8",

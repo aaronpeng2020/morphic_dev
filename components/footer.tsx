@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { SiTelegram } from 'react-icons/si'
+import { SiDiscord, SiGithub, SiX, SiTelegram } from 'react-icons/si'
 import { Button } from './ui/button'
 
 const Footer: React.FC = () => {

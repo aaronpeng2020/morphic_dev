@@ -12,4 +12,4 @@ COPY . .
 
 RUN bun next telemetry disable
 
-CMD ["bun", "dev", "-H", "0.0.0.0"]
+CMD ["bun", "dev", "-H", "0.0.0.0", "-p", "80"]
